@@ -1,0 +1,6 @@
+{
+  "name": "Atlanta Prosthodontics",
+  "description": "Landing page for Atlanta Prosthodontics | Buckhead Restorative Dentistry",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
