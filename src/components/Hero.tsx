@@ -22,7 +22,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6"
           >
-            Reclaim Your Confidence With Atlanta's Specialists in Restorative & Aesthetic Dentistry.
+            Restore Your Smile With Atlanta's Leading Prosthodontic Specialists
           </motion.h1>
           
           <motion.p 
@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-light"
           >
-            Led by Dr. Blackburn II and Dr. Blackburn III, Atlanta Prosthodontics delivers elite, ADA-recognized specialty care in Buckhead—from advanced implants to natural-looking aesthetic dentures.
+            Prosthodontics care Led by Dr. Blackburn II and Dr. Blackburn III in Buckhead, offering aesthetic dentures, dental implants, cosmetic crowns, bridges, and full-mouth restorations that look natural, feel comfortable, and are built to last.
           </motion.p>
           
           <motion.div 
@@ -40,11 +40,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
-            <a href="#appointment" className="bg-gold-500 hover:bg-gold-400 text-navy-900 px-8 py-4 rounded text-center font-semibold text-lg transition-colors flex items-center justify-center min-h-[48px]">
+            <a href="#booking" className="bg-gold-500 hover:bg-gold-400 text-white px-8 py-4 rounded text-center font-semibold text-lg transition-colors flex items-center justify-center min-h-[48px]">
               Schedule a Consultation
             </a>
             <a href="#services" className="border border-white hover:bg-white hover:text-navy-900 text-white px-8 py-4 rounded text-center font-semibold text-lg transition-all flex items-center justify-center min-h-[48px]">
-              Explore Our Procedures
+              Explore Our Services
             </a>
           </motion.div>
 
@@ -53,16 +53,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex items-center gap-6 pt-6 border-t border-white/20"
+            className="flex flex-wrap items-center gap-6 pt-6 border-t border-white/20"
           >
-            <div className="flex items-center text-white/90">
-              <ShieldCheck className="w-5 h-5 text-gold-500 mr-2" />
-              <span className="text-sm font-medium tracking-wide">ADA Recognized Specialists</span>
-            </div>
-            <div className="flex items-center text-white/90">
-              <Award className="w-5 h-5 text-gold-500 mr-2" />
-              <span className="text-sm font-medium tracking-wide">Georgia Dental Association</span>
-            </div>
+            <img src="https://i.ibb.co/BHftVdRf/ada-logo.png" alt="ADA Recognized" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
+            <img src="https://i.ibb.co/S7wtsJ7b/hinman-dental-meeting.jpg" alt="Hinman Dental Meeting" className="h-16 w-auto object-contain rounded" />
+            <img src="https://i.ibb.co/fG9DC7pv/national-dental-association.png" alt="National Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
+            <img src="https://i.ibb.co/7sv5TRw/georgia-dental-association-logo.png" alt="Georgia Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
           </motion.div>
         </div>
       </div>

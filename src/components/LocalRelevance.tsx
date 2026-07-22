@@ -33,8 +33,11 @@ export default function LocalRelevance() {
               <Heart className="w-8 h-8 mr-3" />
               <h3 className="text-xl font-serif font-bold text-white">Community First</h3>
             </div>
-            <p className="text-center text-lg text-champagne font-medium">
-              Now Accepting WellCare Patients &amp; Offering Veteran Discounts.
+            <p className="text-center text-lg text-champagne font-medium mb-4">
+              We are accepting WellCare Patients and are offering Veterans Discounts.
+            </p>
+            <p className="text-center text-sm text-gray-300">
+              We accept cash, checks, debit, Visa, Mastercard, and American Express.
             </p>
           </motion.div>
 

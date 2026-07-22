@@ -34,7 +34,7 @@ export default function FinalCTA() {
                 (404) 869-7618
               </a>
             </div>
-            <a href="#" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded font-semibold text-lg transition-colors flex items-center justify-center min-h-[56px]">
+            <a href="#booking" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded font-semibold text-lg transition-colors flex items-center justify-center min-h-[56px]">
               <Calendar className="w-5 h-5 mr-2" />
               Request Appointment
             </a>

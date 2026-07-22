@@ -1,22 +1,52 @@
 import { motion } from 'motion/react';
-import { Activity, Smile, Layers, ArrowRight } from 'lucide-react';
+import { Activity, Smile, Layers, ArrowRight, Shield, Stethoscope, Star, Sparkles, PlusCircle } from 'lucide-react';
 
 export default function ServicesGrid() {
   const services = [
     {
-      icon: <Activity className="w-8 h-8" />,
-      title: 'Mini Dental Implants',
-      copy: 'Secure loose dentures and restore bite function in just 1 to 2 visits. A less invasive, highly affordable alternative to standard implants.',
-    },
-    {
       icon: <Smile className="w-8 h-8" />,
-      title: 'Premium Dentures & Thermoflex',
-      copy: 'Say goodbye to ugly metal clasps. Our advanced Thermoflex Acetal Resin offers incredibly comfortable, natural-looking partials that blend seamlessly.',
+      title: 'Dentures',
+      copy: 'Premium aesthetic dentures offering comfortable, natural-looking fits that blend seamlessly with your smile.',
     },
     {
       icon: <Layers className="w-8 h-8" />,
-      title: 'Full Mouth Reconstruction & Crowns',
-      copy: 'Advanced porcelain veneers, crowns, bridges, and teeth whitening designed to completely revitalize your smile\'s function and beauty.',
+      title: 'Crowns & Bridges',
+      copy: 'Advanced porcelain crowns and bridges designed to completely revitalize your smile\'s function and beauty.',
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Dental Implants',
+      copy: 'Permanent, natural-looking replacements for missing teeth, restoring full function and preserving jawbone health.',
+    },
+    {
+      icon: <Activity className="w-8 h-8" />,
+      title: 'Mini Dental Implants',
+      copy: 'Secure loose dentures and restore bite function in fewer visits. A less invasive alternative to standard implants.',
+    },
+    {
+      icon: <Stethoscope className="w-8 h-8" />,
+      title: 'Full Mouth Reconstruction',
+      copy: 'Comprehensive restorative treatment combining multiple procedures to completely rebuild and restore your smile.',
+    },
+    {
+      icon: <PlusCircle className="w-8 h-8" />,
+      title: 'Dental Bonding',
+      copy: 'Quick and effective cosmetic treatment to repair chipped, cracked, or discolored teeth using tooth-colored resin.',
+    },
+    {
+      icon: <Star className="w-8 h-8" />,
+      title: 'Porcelain Veneers',
+      copy: 'Custom-crafted, ultra-thin porcelain shells designed to cover imperfections and create a flawless, dazzling smile.',
+    },
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: 'Teeth Whitening',
+      copy: 'Professional-grade whitening treatments to safely and effectively brighten your smile by several shades.',
+    },
+    {
+      icon: <Activity className="w-8 h-8" />,
+      title: 'TMJ Disorders Treatment',
+      copy: 'Specialized therapy and custom oral appliances to relieve jaw pain, headaches, and restore proper joint function.',
     }
   ];
 
@@ -45,7 +75,7 @@ export default function ServicesGrid() {
               <p className="text-charcoal mb-6 leading-relaxed">
                 {service.copy}
               </p>
-              <a href="#appointment" className="inline-flex items-center text-navy-900 font-semibold group-hover:text-gold-500 transition-colors">
+              <a href="#booking" className="inline-flex items-center text-navy-900 font-semibold group-hover:text-gold-500 transition-colors">
                 Learn More <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </motion.div>

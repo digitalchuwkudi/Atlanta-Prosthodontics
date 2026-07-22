@@ -14,9 +14,9 @@ export default function Header() {
 
   const navLinks = [
     { name: 'About Us', href: '#about' },
-    { name: 'Dental Procedures', href: '#services' },
+    { name: 'Dental Services', href: '#services' },
     { name: 'What is a Prosthodontist?', href: '#prosthodontist' },
-    { name: 'New Patients', href: '#patients' },
+    { name: 'Contact Us', href: '#booking' },
   ];
 
   return (
@@ -36,9 +36,14 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-sm font-medium text-charcoal hover:text-gold-500 transition-colors">
-              {link.name}
-            </a>
+            <div key={link.name} className="flex flex-col items-center">
+              <a href={link.href} className="text-sm font-medium text-charcoal hover:text-gold-500 transition-colors">
+                {link.name}
+              </a>
+              {link.subtitle && (
+                <span className="text-[10px] text-gray-500 mt-0.5">{link.subtitle}</span>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -54,7 +59,7 @@ export default function Header() {
               (404) 869-7618
             </a>
           </div>
-          <a href="#appointment" className="bg-navy-900 text-white px-6 py-2.5 rounded hover:bg-navy-800 transition-colors text-sm font-medium">
+          <a href="#booking" className="bg-navy-900 text-white px-6 py-2.5 rounded hover:bg-gold-500 transition-colors text-sm font-medium">
             Request Appointment
           </a>
         </div>
@@ -81,9 +86,14 @@ export default function Header() {
           >
             <div className="px-4 py-6 space-y-4 flex flex-col">
               {navLinks.map((link) => (
-                <a key={link.name} href={link.href} className="text-base font-medium text-navy-900 hover:text-gold-500" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.name}
-                </a>
+                <div key={link.name} className="flex flex-col">
+                  <a href={link.href} className="text-base font-medium text-navy-900 hover:text-gold-500" onClick={() => setIsMobileMenuOpen(false)}>
+                    {link.name}
+                  </a>
+                  {link.subtitle && (
+                    <span className="text-xs text-gray-500 mt-1">{link.subtitle}</span>
+                  )}
+                </div>
               ))}
               <div className="pt-4 flex flex-col space-y-3">
                 <a href="tel:4046597696" className="flex items-center justify-center w-full bg-champagne-light text-navy-900 px-6 py-3 rounded font-bold text-lg">
@@ -94,7 +104,7 @@ export default function Header() {
                   <Phone className="w-5 h-5 mr-2 text-gold-500" />
                   (404) 869-7618
                 </a>
-                <a href="#appointment" className="flex items-center justify-center w-full bg-navy-900 text-white px-6 py-3 rounded font-medium">
+                <a href="#booking" className="flex items-center justify-center w-full bg-navy-900 text-white px-6 py-3 rounded font-medium hover:bg-gold-500 transition-colors">
                   Request Appointment
                 </a>
               </div>
