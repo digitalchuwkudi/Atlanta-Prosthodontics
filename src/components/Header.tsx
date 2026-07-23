@@ -12,7 +12,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: { name: string; href: string; subtitle?: string }[] = [
     { name: 'About Us', href: '#about' },
     { name: 'Dental Services', href: '#services' },
     { name: 'What is a Prosthodontist?', href: '#prosthodontist' },

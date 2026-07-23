@@ -7,6 +7,8 @@ import Hero from './components/Hero';
 import SpecialistAdvantage from './components/SpecialistAdvantage';
 import ServicesGrid from './components/ServicesGrid';
 import MeetDoctors from './components/MeetDoctors';
+import OurStaff from './components/OurStaff';
+import Testimonials from './components/Testimonials';
 import BookingContact from './components/BookingContact';
 import LocalRelevance from './components/LocalRelevance';
 import FinalCTA from './components/FinalCTA';
@@ -21,6 +23,8 @@ export default function App() {
         <SpecialistAdvantage />
         <ServicesGrid />
         <MeetDoctors />
+        <OurStaff />
+        <Testimonials />
         <BookingContact />
         <LocalRelevance />
         <FinalCTA />
