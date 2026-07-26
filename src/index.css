@@ -18,3 +18,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+@utility image-render-sharp {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}

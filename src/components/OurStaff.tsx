@@ -6,22 +6,22 @@ export default function OurStaff() {
     {
       name: "Palak Patel",
       role: "Dental Hygienist",
-      image: "https://i.ibb.co/YCsmXkk/image.jpg"
+      image: "https://i.ibb.co/xqjW323N/image.jpg"
     },
     {
       name: "Bert Butts",
       role: "Treatment / Financial Coordinator",
-      image: "https://i.ibb.co/HpHDGJmZ/image.jpg"
+      image: "https://i.ibb.co/5hwmQJNH/bert-butts.jpg"
     },
     {
       name: "Selena Ennis",
       role: "Special Projects / Admin",
-      image: "https://i.ibb.co/zh4ZNpNK/image.jpg"
+      image: "https://i.ibb.co/YBbV1Lmn/selena-ennis.jpg"
     },
     {
       name: "Gisele Gonzales",
       role: "Surgical Assistant / Implant Coordinator",
-      image: "https://i.ibb.co/8LcvbRb7/image.jpg"
+      image: "https://i.ibb.co/LmTFz3n/gisele-gonzales.jpg"
     }
   ];
 
@@ -46,7 +46,7 @@ export default function OurStaff() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
           {staff.map((member, index) => (
             <motion.div
               key={member.name}
@@ -54,18 +54,20 @@ export default function OurStaff() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-champagne-light rounded-2xl p-6 text-center hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:bg-white border border-transparent hover:border-gold-500/10 hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-champagne-light rounded-2xl p-6 text-center hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:bg-white border border-transparent hover:border-gold-500/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
-              <div className="w-full aspect-[3/4] mx-auto bg-gray-100 rounded-xl overflow-hidden border border-gold-500/20 mb-6 shadow-sm">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                  referrerPolicy="no-referrer"
-                />
+              <div>
+                <div className="w-full aspect-[3/4] mx-auto bg-gray-100 rounded-xl overflow-hidden border border-gold-500/20 mb-6 shadow-sm">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h4 className="text-xl font-serif font-bold text-navy-900 mb-2">{member.name}</h4>
               </div>
-              <h4 className="text-xl font-serif font-bold text-navy-900 mb-2">{member.name}</h4>
-              <p className="text-charcoal font-medium text-sm">{member.role}</p>
+              <p className="text-charcoal font-medium text-sm mt-1">{member.role}</p>
             </motion.div>
           ))}
         </div>

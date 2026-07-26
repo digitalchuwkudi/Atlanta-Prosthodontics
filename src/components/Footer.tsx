@@ -4,20 +4,20 @@ export default function Footer() {
   return (
     <footer className="bg-white text-charcoal pt-16 pb-8 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center justify-items-center">
           
-          <div className="flex flex-col items-center md:items-start">
-            <a href="#" className="flex flex-col mb-6 items-center md:items-start">
+          <div className="flex flex-col items-center text-center max-w-sm">
+            <a href="#" className="flex flex-col mb-6 items-center">
               <img 
                 src="https://i.ibb.co/yFdG6yT2/logo.png" 
                 alt="Atlanta Prosthodontics" 
-                className="h-[50px] w-auto object-contain object-center md:object-left"
+                className="h-[50px] w-auto object-contain object-center"
               />
             </a>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">
               Elite specialty care specializing in aesthetic dentures, mini dental implants, and full mouth reconstruction.
             </p>
-            <div className="flex items-center justify-center md:justify-start space-x-3">
+            <div className="flex items-center justify-center space-x-3">
               <a href="https://www.facebook.com/atlantaprosthodontics" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gold-500 hover:-translate-y-1 transition-all duration-300 transform shadow-sm" title="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center text-center">
             <h4 className="text-lg font-serif font-bold text-gold-500 mb-4">Cities Around Atlanta Served</h4>
             <ul className="space-y-3 text-sm text-gray-500">
               <li>Sandy Springs</li>
@@ -48,27 +48,27 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center text-center">
             <h4 className="text-lg font-serif font-bold text-gold-500 mb-4">Contact Us</h4>
-            <ul className="space-y-4 text-sm text-gray-500 flex flex-col items-center md:items-start">
-              <li className="flex flex-col items-center md:flex-row md:items-start text-center md:text-left">
-                <MapPin className="w-5 h-5 mb-1.5 md:mb-0 md:mr-3 text-gold-500 flex-shrink-0" />
+            <ul className="space-y-4 text-sm text-gray-500 flex flex-col items-center">
+              <li className="flex flex-col items-center text-center">
+                <MapPin className="w-5 h-5 mb-1.5 text-gold-500 flex-shrink-0" />
                 <span>2812 Piedmont Rd<br />Atlanta GA, 30305</span>
               </li>
-              <li className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left">
-                <Phone className="w-5 h-5 mb-1.5 md:mb-0 md:mr-3 text-gold-500 flex-shrink-0" />
+              <li className="flex flex-col items-center text-center">
+                <Phone className="w-5 h-5 mb-1.5 text-gold-500 flex-shrink-0" />
                 <a href="tel:4046597696" className="hover:text-gold-500 transition-colors">(404) 659-7696</a>
               </li>
-              <li className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left">
-                <Phone className="w-5 h-5 mb-1.5 md:mb-0 md:mr-3 text-gold-500 flex-shrink-0" />
+              <li className="flex flex-col items-center text-center">
+                <Phone className="w-5 h-5 mb-1.5 text-gold-500 flex-shrink-0" />
                 <a href="tel:4048697618" className="hover:text-gold-500 transition-colors">(404) 869-7618</a>
               </li>
-              <li className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left">
-                <Mail className="w-5 h-5 mb-1.5 md:mb-0 md:mr-3 text-gold-500 flex-shrink-0" />
+              <li className="flex flex-col items-center text-center">
+                <Mail className="w-5 h-5 mb-1.5 text-gold-500 flex-shrink-0" />
                 <a href="mailto:info@atlantaprosthodontics.com" className="hover:text-gold-500 transition-colors">info@atlantaprosthodontics.com</a>
               </li>
-              <li className="flex flex-col items-center md:flex-row md:items-start text-center md:text-left pt-1">
-                <Clock className="w-5 h-5 mb-1.5 md:mb-0 md:mr-3 text-gold-500 flex-shrink-0" />
+              <li className="flex flex-col items-center text-center pt-1">
+                <Clock className="w-5 h-5 mb-1.5 text-gold-500 flex-shrink-0" />
                 <span className="text-gray-500">Office Hours:<br />Tues - Fri 9 am - 5 pm</span>
               </li>
             </ul>

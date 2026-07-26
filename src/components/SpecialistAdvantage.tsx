@@ -41,11 +41,11 @@ export default function SpecialistAdvantage() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[500px] lg:h-[600px] w-full bg-white transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,229,255,0.45)] hover:border-gold-500/25 border border-transparent group">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[450px] lg:h-[540px] w-full max-w-xl mx-auto bg-white transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,229,255,0.45)] hover:border-gold-500/25 border border-transparent group">
               <img 
-                src="https://i.ibb.co/bM03bwgK/image.jpg" 
+                src="https://i.ibb.co/7t6JN5Rr/image.jpg" 
                 alt="Dental Prosthodontist"
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
                 referrerPolicy="no-referrer"
               />
             </div>

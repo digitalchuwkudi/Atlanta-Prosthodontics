@@ -27,6 +27,15 @@ export default function Gallery() {
       span: "col-span-1"
     },
     {
+      id: 10,
+      title: "Artisanal Crown Design Studio",
+      category: "Our Office",
+      image: "https://i.ibb.co/3m0tmRcL/image.jpg",
+      description: "Bespoke dental prosthetics engineered and custom-shaded by master dental craftspeople on-site in Buckhead.",
+      aspect: "aspect-[16/9]",
+      span: "col-span-1 md:col-span-2"
+    },
+    {
       id: 8,
       title: "Digital Guided Surgical Planning",
       category: "Advanced Clinical",
@@ -43,15 +52,6 @@ export default function Gallery() {
       description: "Our elegant, serene Buckhead-inspired reception area designed to make you feel comfortable and right at home.",
       aspect: "aspect-[4/3]",
       span: "col-span-1"
-    },
-    {
-      id: 10,
-      title: "Artisanal Crown Design Studio",
-      category: "Our Office",
-      image: "https://i.ibb.co/3m0tmRcL/image.jpg",
-      description: "Bespoke dental prosthetics engineered and custom-shaded by master dental craftspeople on-site in Buckhead.",
-      aspect: "aspect-[16/9]",
-      span: "col-span-1 md:col-span-2"
     },
     {
       id: 11,

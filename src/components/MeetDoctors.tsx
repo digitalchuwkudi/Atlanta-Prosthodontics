@@ -30,20 +30,20 @@ export default function MeetDoctors() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Dr. Blackburn II */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left"
+            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left w-full max-w-xl mx-auto"
           >
-            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm">
+            <div className="w-full h-[420px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm relative">
               <img 
-                src="https://i.ibb.co/RTzsC0pQ/image.jpg" 
+                src="https://i.ibb.co/JFsQ1ksY/dr-blackburn-ii.jpg" 
                 alt="Dr. B.A. Blackburn II" 
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -70,13 +70,13 @@ export default function MeetDoctors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left"
+            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left w-full max-w-xl mx-auto"
           >
-            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm">
+            <div className="w-full h-[420px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm relative">
               <img 
-                src="https://i.ibb.co/FkRkr57y/image.jpg" 
+                src="https://i.ibb.co/gbh4zNTg/dr-blackburn-iii.jpg" 
                 alt="Dr. B.A. Blackburn III" 
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
                 referrerPolicy="no-referrer"
               />
             </div>
