@@ -42,9 +42,19 @@ export default function Testimonials() {
             <p className="text-lg text-gray-300 italic mb-8 flex-grow leading-relaxed">
               "Had a great experience with Dr. Blackburn and his wonderful staff. Very professional and his expertise in the field is unsurpassed. I would recommend his services to anyone, and have suggested that many of my patients see him as well. No regrets...just great results!"
             </p>
-            <div className="mt-auto">
-              <p className="font-bold text-white text-lg">Dr. Titus Duncan</p>
-              <p className="text-gold-500 text-sm font-medium">Plastic Surgeon</p>
+            <div className="mt-auto flex items-center justify-between">
+              <div>
+                <p className="font-bold text-white text-lg">Dr. Titus Duncan</p>
+                <p className="text-gold-500 text-sm font-medium">Plastic Surgeon</p>
+              </div>
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold-500/30 hover:border-[#00E5FF]/60 hover:shadow-[0_0_15px_rgba(0,229,255,0.4)] shrink-0 ml-4 shadow-md transition-all duration-300">
+                <img 
+                  src="https://i.ibb.co/HDhy5Wn6/image.jpg" 
+                  alt="Dr. Titus Duncan" 
+                  className="w-full h-full object-cover object-center"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -54,9 +64,9 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="col-span-1 lg:col-span-1 bg-navy-800 rounded-2xl p-4 border border-white/10 flex flex-col h-full"
+            className="col-span-1 lg:col-span-1 bg-navy-800 rounded-2xl p-8 md:p-10 border border-white/10 flex flex-col h-full"
           >
-            <div className="relative w-full pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-lg mb-4">
+            <div className="relative w-full pb-[70%] h-0 rounded-xl overflow-hidden shadow-lg mb-6">
               <iframe 
                 src="https://www.youtube.com/embed/0ESDIjtzhco?rel=0&showinfo=0" 
                 className="absolute top-0 left-0 w-full h-full"
@@ -65,7 +75,7 @@ export default function Testimonials() {
                 title="Atlanta Denture Patient Testimonial"
               ></iframe>
             </div>
-            <div className="mt-auto pt-4 px-2">
+            <div className="mt-auto">
               <p className="font-bold text-white text-lg">Denture Patient</p>
               <p className="text-gold-500 text-sm font-medium">Atlanta, GA</p>
             </div>
@@ -77,9 +87,9 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="col-span-1 lg:col-span-1 bg-navy-800 rounded-2xl p-4 border border-white/10 flex flex-col h-full"
+            className="col-span-1 lg:col-span-1 bg-navy-800 rounded-2xl p-8 md:p-10 border border-white/10 flex flex-col h-full"
           >
-            <div className="relative w-full pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-lg mb-4">
+            <div className="relative w-full pb-[70%] h-0 rounded-xl overflow-hidden shadow-lg mb-6">
               <iframe 
                 src="https://www.youtube.com/embed/620NXNfj8-A?rel=0&showinfo=0" 
                 className="absolute top-0 left-0 w-full h-full"
@@ -88,7 +98,7 @@ export default function Testimonials() {
                 title="Simon Cohen Video Testimonial - Crowns and Veneers"
               ></iframe>
             </div>
-            <div className="mt-auto pt-4 px-2">
+            <div className="mt-auto">
               <p className="font-bold text-white text-lg">Simon Cohen</p>
               <p className="text-gold-500 text-sm font-medium">Crowns & Veneers</p>
             </div>

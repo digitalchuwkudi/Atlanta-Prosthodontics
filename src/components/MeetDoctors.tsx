@@ -12,12 +12,21 @@ export default function MeetDoctors() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6">
-              Decades of Expertise.<br />One Shared Goal.
-            </h2>
-            <blockquote className="border-l-4 border-gold-500 pl-4 py-1 mb-8 italic text-lg text-navy-800 font-serif max-w-2xl mx-auto">
-              "To provide you with the very best in quality dental care and superior customer service."
-            </blockquote>
+            <h2 className="text-sm font-bold tracking-widest text-gold-500 uppercase mb-3">Meet Our Doctors</h2>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-8">Buckhead Restorative Dentistry</h3>
+            <div className="relative inline-block px-12 py-6 max-w-2xl mx-auto mb-4">
+              <svg 
+                className="absolute inset-0 w-full h-full text-gold-500/40 pointer-events-none" 
+                viewBox="0 0 100 100" 
+                preserveAspectRatio="none"
+                style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round' }}
+              >
+                <path d="M 5,50 C 5,15 95,10 95,50 C 95,90 8,85 6,52 C 5,25 90,18 92,45" />
+              </svg>
+              <blockquote className="italic text-lg md:text-xl text-navy-800 font-serif relative z-10">
+                "To provide you with the very best in quality dental care and superior customer service."
+              </blockquote>
+            </div>
           </motion.div>
         </div>
 
@@ -28,16 +37,19 @@ export default function MeetDoctors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-navy-900 text-gold-500 rounded-full flex items-center justify-center shrink-0">
-                <User className="w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-serif font-bold text-navy-900">Dr. B.A. Blackburn II</h3>
-                <p className="text-gold-500 font-medium">Restorative Dentist & Prosthodontist</p>
-              </div>
+            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm">
+              <img 
+                src="https://i.ibb.co/RTzsC0pQ/image.jpg" 
+                alt="Dr. B.A. Blackburn II" 
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="mb-6">
+              <h3 className="text-2xl font-serif font-bold text-navy-900">Dr. B.A. Blackburn II</h3>
+              <p className="text-gold-500 font-medium">Restorative Dentist & Prosthodontist</p>
             </div>
             <div className="space-y-4 text-charcoal leading-relaxed">
               <p>
@@ -58,16 +70,19 @@ export default function MeetDoctors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.35)] hover:border-gold-500/20 hover:-translate-y-1 transition-all duration-300 group text-left"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-navy-900 text-gold-500 rounded-full flex items-center justify-center shrink-0">
-                <User className="w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-serif font-bold text-navy-900">Dr. B.A. Blackburn III</h3>
-                <p className="text-gold-500 font-medium">Prosthodontist</p>
-              </div>
+            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm">
+              <img 
+                src="https://i.ibb.co/FkRkr57y/image.jpg" 
+                alt="Dr. B.A. Blackburn III" 
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="mb-6">
+              <h3 className="text-2xl font-serif font-bold text-navy-900">Dr. B.A. Blackburn III</h3>
+              <p className="text-gold-500 font-medium">Prosthodontist</p>
             </div>
             <div className="space-y-4 text-charcoal leading-relaxed">
               <p>

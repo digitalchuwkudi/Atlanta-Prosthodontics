@@ -23,19 +23,16 @@ export default function FinalCTA() {
             Experience elite dental artistry right here in Atlanta. Contact our Buckhead office today to schedule your consultation.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center gap-4">
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:4046597696" className="bg-gold-500 hover:bg-gold-400 text-white px-6 py-4 rounded font-semibold text-lg transition-colors flex items-center justify-center min-h-[56px] shadow-lg">
-                <Phone className="w-5 h-5 mr-2" />
+              <a href="tel:4046597696" className="bg-gold-500 text-white hover:bg-white hover:text-gold-500 px-6 py-4 rounded font-semibold text-lg hover:-translate-y-1 transition-all duration-300 transform flex items-center justify-center min-h-[56px] shadow-lg">
                 (404) 659-7696
               </a>
-              <a href="tel:4048697618" className="bg-gold-500 hover:bg-gold-400 text-white px-6 py-4 rounded font-semibold text-lg transition-colors flex items-center justify-center min-h-[56px] shadow-lg">
-                <Phone className="w-5 h-5 mr-2" />
+              <a href="tel:4048697618" className="bg-gold-500 text-white hover:bg-white hover:text-gold-500 px-6 py-4 rounded font-semibold text-lg hover:-translate-y-1 transition-all duration-300 transform flex items-center justify-center min-h-[56px] shadow-lg">
                 (404) 869-7618
               </a>
             </div>
-            <a href="#booking" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded font-semibold text-lg transition-colors flex items-center justify-center min-h-[56px]">
-              <Calendar className="w-5 h-5 mr-2" />
+            <a href="#booking" className="bg-white text-gold-500 hover:bg-gold-500 hover:text-white border border-white/20 px-8 py-4 rounded font-semibold text-lg hover:-translate-y-1 transition-all duration-300 transform flex items-center justify-center min-h-[56px]">
               Request Appointment
             </a>
           </div>

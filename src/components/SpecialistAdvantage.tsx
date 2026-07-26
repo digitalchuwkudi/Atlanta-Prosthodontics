@@ -13,12 +13,8 @@ export default function SpecialistAdvantage() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <div className="inline-flex items-center justify-center p-3 bg-white rounded-full shadow-sm mb-6 text-gold-500">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6">
-              Why Choose a Dental Prosthodontist?
-            </h2>
+            <h2 className="text-sm font-bold tracking-widest text-gold-500 uppercase mb-3">What is a Prosthodontist?</h2>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6">Buckhead Restorative Dentistry</h3>
             <div className="text-lg text-charcoal leading-relaxed font-light space-y-6 text-left">
               <p>
                 A prosthodontist is a dental specialist in replacing missing teeth and/or restoring damaged teeth. Prosthodontics is an official specialty recognized by the ADA and is one of only two dental specialties that focuses on cosmetics or esthetics.
@@ -45,12 +41,12 @@ export default function SpecialistAdvantage() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[600px]">
-              {/* User should replace this src with their actual image URL from ibb.co (https://ibb.co/bM03bwgK) */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[500px] lg:h-[600px] w-full bg-white transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,229,255,0.45)] hover:border-gold-500/25 border border-transparent group">
               <img 
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="https://i.ibb.co/bM03bwgK/image.jpg" 
                 alt="Dental Prosthodontist"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                referrerPolicy="no-referrer"
               />
             </div>
           </motion.div>

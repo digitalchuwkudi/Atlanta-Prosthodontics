@@ -40,10 +40,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
-            <a href="#booking" className="bg-gold-500 hover:bg-gold-400 text-white px-8 py-4 rounded text-center font-semibold text-lg transition-colors flex items-center justify-center min-h-[48px]">
+            <a href="#booking" className="bg-gold-500 text-white hover:bg-white hover:text-gold-500 px-8 py-4 rounded text-center font-semibold text-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300 transform flex items-center justify-center min-h-[48px] shadow-lg hover:shadow-xl">
               Schedule a Consultation
             </a>
-            <a href="#services" className="border border-white hover:bg-white hover:text-navy-900 text-white px-8 py-4 rounded text-center font-semibold text-lg transition-all flex items-center justify-center min-h-[48px]">
+            <a href="#services" className="bg-white text-navy-900 hover:bg-gold-500 hover:text-white px-8 py-4 rounded text-center font-semibold text-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300 transform flex items-center justify-center min-h-[48px] shadow-md hover:shadow-lg">
               Explore Our Services
             </a>
           </motion.div>
@@ -55,10 +55,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap items-center gap-6 pt-6 border-t border-white/20"
           >
-            <img src="https://i.ibb.co/BHftVdRf/ada-logo.png" alt="ADA Recognized" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
-            <img src="https://i.ibb.co/S7wtsJ7b/hinman-dental-meeting.jpg" alt="Hinman Dental Meeting" className="h-16 w-auto object-contain rounded" />
-            <img src="https://i.ibb.co/fG9DC7pv/national-dental-association.png" alt="National Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
-            <img src="https://i.ibb.co/7sv5TRw/georgia-dental-association-logo.png" alt="Georgia Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1 rounded" />
+            <img src="https://i.ibb.co/BHftVdRf/ada-logo.png" alt="ADA Recognized" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/S7wtsJ7b/hinman-dental-meeting.jpg" alt="Hinman Dental Meeting" className="h-16 w-auto object-contain rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/fG9DC7pv/national-dental-association.png" alt="National Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/7sv5TRw/georgia-dental-association-logo.png" alt="Georgia Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
           </motion.div>
         </div>
       </div>

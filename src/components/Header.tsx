@@ -59,7 +59,7 @@ export default function Header() {
               (404) 869-7618
             </a>
           </div>
-          <a href="#booking" className="bg-navy-900 text-white px-6 py-2.5 rounded hover:bg-gold-500 transition-colors text-sm font-medium">
+          <a href="#booking" className="bg-navy-900 text-white px-8 py-3.5 rounded font-bold text-base hover:bg-gold-500 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 transform shadow-md hover:shadow-lg whitespace-nowrap">
             Request Appointment
           </a>
         </div>
@@ -104,7 +104,7 @@ export default function Header() {
                   <Phone className="w-5 h-5 mr-2 text-gold-500" />
                   (404) 869-7618
                 </a>
-                <a href="#booking" className="flex items-center justify-center w-full bg-navy-900 text-white px-6 py-3 rounded font-medium hover:bg-gold-500 transition-colors">
+                <a href="#booking" className="flex items-center justify-center w-full bg-navy-900 text-white px-6 py-3.5 rounded font-bold text-lg hover:bg-gold-500 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 transform shadow-md" onClick={() => setIsMobileMenuOpen(false)}>
                   Request Appointment
                 </a>
               </div>

@@ -8,6 +8,7 @@ import SpecialistAdvantage from './components/SpecialistAdvantage';
 import ServicesGrid from './components/ServicesGrid';
 import MeetDoctors from './components/MeetDoctors';
 import OurStaff from './components/OurStaff';
+import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import BookingContact from './components/BookingContact';
 import LocalRelevance from './components/LocalRelevance';
@@ -24,6 +25,7 @@ export default function App() {
         <ServicesGrid />
         <MeetDoctors />
         <OurStaff />
+        <Gallery />
         <Testimonials />
         <BookingContact />
         <LocalRelevance />
