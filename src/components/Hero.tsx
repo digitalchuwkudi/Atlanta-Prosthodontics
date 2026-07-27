@@ -11,10 +11,10 @@ export default function Hero() {
         <img 
           src={heroImg} 
           alt="Prosthodontist crafting a dental restoration" 
-          className="w-full h-full object-cover object-[85%_48%] sm:object-[80%_48%] lg:object-center image-render-sharp brightness-50 lg:brightness-75 opacity-90"
+          className="w-full h-full object-cover object-[85%_48%] sm:object-[80%_48%] lg:object-center image-render-sharp brightness-60 lg:brightness-80 opacity-95"
           referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-black/75 lg:bg-gradient-to-r lg:from-black/80 lg:via-black/65 lg:to-black/25"></div>
+         />
+        <div className="absolute inset-0 bg-black/60 lg:bg-gradient-to-r lg:from-black/70 lg:via-black/50 lg:to-black/15"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
