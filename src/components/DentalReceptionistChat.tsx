@@ -297,7 +297,7 @@ export default function DentalReceptionistChat() {
   ) => {
     try {
       const transcript = currentMessages
-        .map(m => `${m.role === "user" ? "Lead" : "Practice Receptionist"}: ${m.content}`)
+        .map(m => `${m.role === "user" ? "Lead" : "Dental Receptionist"}: ${m.content}`)
         .join("\n\n");
 
       const emailContent = `
@@ -426,8 +426,8 @@ ${transcript}
             className="bg-navy-900 border border-gold-500/30 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 max-w-xs relative"
           >
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping absolute -top-1 -right-1" />
-            <Sparkles className="w-4 h-4 text-gold-500 shrink-0" />
-            <span>Speak with our <strong>Elite Reception Concierge</strong></span>
+            <MessageSquare className="w-4 h-4 text-gold-500 shrink-0" />
+            <span>Speak with our <strong>Dental Receptionist</strong></span>
             <button 
               onClick={(e) => {
                 e.stopPropagation();
@@ -470,14 +470,14 @@ ${transcript}
             <div className="bg-navy-900 text-white px-5 py-4 flex items-center justify-between border-b border-gold-500/20 relative shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gold-500 to-navy-800 rounded-full flex items-center justify-center border-2 border-gold-400/50 shadow-md">
-                    <Sparkles className="w-5 h-5 text-white animate-pulse" />
+                  <div className="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center border border-gold-500/40 shadow-sm">
+                    <span className="text-gold-400 font-serif font-bold text-sm tracking-widest">AP</span>
                   </div>
                   <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full absolute bottom-0 right-0 border-2 border-navy-900" />
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-sm tracking-wide flex items-center gap-1.5">
-                    Practice Receptionist
+                    Dental Receptionist
                   </h3>
                   <p className="text-[11px] text-gold-400 font-medium tracking-wider uppercase">
                     Atlanta Prosthodontics
@@ -504,8 +504,38 @@ ${transcript}
               </div>
             </div>
 
+            {/* Consultation Progress Stepper */}
+            <div className="bg-white border-b border-gray-100 px-4 py-2.5 flex items-center justify-between text-[11px] shrink-0 select-none">
+              <div className="flex items-center gap-1.5">
+                <span className={`w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] ${
+                  leadCaptured ? "bg-emerald-100 text-emerald-800" : messages.length > 2 ? "bg-emerald-100 text-emerald-800" : "bg-gold-500 text-white"
+                }`}>
+                  {messages.length > 2 || leadCaptured ? "✓" : "1"}
+                </span>
+                <span className={`font-medium ${messages.length <= 2 && !leadCaptured ? "text-navy-900 font-semibold" : "text-gray-400"}`}>Welcome</span>
+              </div>
+              <div className="h-[1px] flex-1 bg-gray-200 mx-2" />
+              <div className="flex items-center gap-1.5">
+                <span className={`w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] ${
+                  leadCaptured ? "bg-emerald-100 text-emerald-800" : messages.length > 2 ? "bg-gold-500 text-white" : "bg-gray-100 text-gray-400"
+                }`}>
+                  {leadCaptured ? "✓" : "2"}
+                </span>
+                <span className={`font-medium ${messages.length > 2 && !leadCaptured ? "text-navy-900 font-semibold" : "text-gray-400"}`}>Care Profile</span>
+              </div>
+              <div className="h-[1px] flex-1 bg-gray-200 mx-2" />
+              <div className="flex items-center gap-1.5">
+                <span className={`w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] ${
+                  leadCaptured ? "bg-gold-500 text-white" : "bg-gray-100 text-gray-400"
+                }`}>
+                  3
+                </span>
+                <span className={`font-medium ${leadCaptured ? "text-navy-900 font-semibold" : "text-gray-400"}`}>Priority VIP</span>
+              </div>
+            </div>
+
             {/* HIPAA Compliance Badge */}
-            <div className="bg-navy-950/5 border-b border-gray-100 px-4 py-2 flex items-center justify-center gap-1.5 text-[11px] text-gray-500">
+            <div className="bg-navy-950/5 border-b border-gray-100 px-4 py-2 flex items-center justify-center gap-1.5 text-[11px] text-gray-500 shrink-0">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               <span>HIPAA Compliant • Patient Privacy Protected</span>
             </div>
@@ -513,8 +543,11 @@ ${transcript}
             {/* Chat Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 relative">
               {messages.map((msg, index) => (
-                <div
+                <motion.div
                   key={msg.id}
+                  initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${
@@ -532,7 +565,7 @@ ${transcript}
                       {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
 
               {isTyping && (
@@ -544,6 +577,8 @@ ${transcript}
                   </div>
                 </div>
               )}
+
+
 
               {/* Interactive simulated clinic alert */}
               {leadAlert && (
@@ -591,11 +626,33 @@ ${transcript}
               <div ref={messagesEndRef} />
             </div>
 
-
+            {/* Quick Suggestions Chips */}
+            {messages.length <= 3 && !leadCaptured && (
+              <div className="px-3 py-2 bg-gray-50 border-t border-gray-100 flex items-center gap-2 overflow-x-auto scrollbar-none shrink-0">
+                <button
+                  onClick={() => handleSendMessage("Tell me about Dr. Blackburn and their prosthodontic credentials")}
+                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
+                >
+                  🎓 Dr. Blackburn's Expertise
+                </button>
+                <button
+                  onClick={() => handleSendMessage("What custom restorative treatments do you offer?")}
+                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
+                >
+                  💎 Restorative Treatments
+                </button>
+                <button
+                  onClick={() => handleSendMessage("Do you accept insurance or offer payment plans?")}
+                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
+                >
+                  💰 Insurance & Financing
+                </button>
+              </div>
+            )}
 
             {/* Microphone listening indicator */}
             {isListening && (
-              <div className="bg-gold-50 px-4 py-2 flex items-center justify-between text-xs text-navy-900 border-t border-gold-200 animate-pulse">
+              <div className="bg-gold-50 px-4 py-2 flex items-center justify-between text-xs text-navy-900 border-t border-gold-200 animate-pulse shrink-0">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
@@ -612,7 +669,7 @@ ${transcript}
             )}
 
             {/* Input Form */}
-            <div className="p-3 border-t border-gray-100 bg-white flex items-center gap-2">
+            <div className="p-3 border-t border-gray-100 bg-white flex items-center gap-2 shrink-0">
               <button
                 type="button"
                 onClick={toggleListening}
