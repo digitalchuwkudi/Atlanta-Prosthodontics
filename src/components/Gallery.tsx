@@ -18,39 +18,39 @@ export default function Gallery() {
 
   const galleryItems: GalleryItem[] = [
     {
-      id: 7,
+      id: 11,
       title: "Full Arch Rehabilitation",
       category: "Smile Transformations",
-      image: "https://i.ibb.co/s9LZjsbS/image.jpg",
-      description: "Complete dynamic arch rehabilitation restoring full occlusal balance, anatomical alignment, and a healthy patient bite."
-    },
-    {
-      id: 10,
-      title: "Artisanal Crown Design Studio",
-      category: "Our Office",
-      image: "https://i.ibb.co/SwS8vPXG/image.jpg",
-      description: "Bespoke dental prosthetics engineered and custom-shaded by master dental craftspeople on-site in Buckhead."
-    },
-    {
-      id: 8,
-      title: "Digital Guided Surgical Planning",
-      category: "Advanced Clinical",
-      image: "https://i.ibb.co/4CsP8Dc/image.jpg",
-      description: "Three-dimensional computed guidance mapping and high-precision prosthetic surgical templates."
+      image: "https://i.ibb.co/pBc0SJ03/image.jpg",
+      description: "Meticulous clinical procedure restoring a patient's natural bite balance, anatomical alignment, and full aesthetic harmony."
     },
     {
       id: 9,
       title: "Welcoming Buckhead Lounge",
       category: "Our Office",
-      image: "https://i.ibb.co/HTvW8DH4/image.jpg",
-      description: "Our elegant, serene Buckhead-inspired reception area designed to make you feel comfortable and right at home."
+      image: "https://i.ibb.co/SwS8vPXG/image.jpg",
+      description: "Our elegant, calming reception area designed to make you feel relaxed, comfortable, and right at home."
     },
     {
-      id: 11,
-      title: "Virtual Smile Architecture",
+      id: 7,
+      title: "Drs. Blackburn II & III",
+      category: "Our Office",
+      image: "https://i.ibb.co/s9LZjsbS/image.jpg",
+      description: "Our leading prosthodontic specialists inside their Buckhead consultation office, representing over 50 years of combined specialized expertise."
+    },
+    {
+      id: 8,
+      title: "Buckhead Clinical Entrance",
+      category: "Our Office",
+      image: "https://i.ibb.co/4CsP8Dc/image.jpg",
+      description: "Our modern clinical practice situated in the heart of Buckhead, Atlanta, featuring state-of-the-art diagnostic facilities."
+    },
+    {
+      id: 10,
+      title: "Our Clinical Team",
       category: "Advanced Clinical",
-      image: "https://i.ibb.co/pBc0SJ03/image.jpg",
-      description: "Precision digital mapping of oral structures to design a balanced, natural smile with microscopic detail."
+      image: "https://i.ibb.co/HTvW8DH4/image.jpg",
+      description: "Our highly specialized dental assistants, hygienists, and coordinators who work closely with the doctors to deliver a premium patient experience."
     }
   ];
 

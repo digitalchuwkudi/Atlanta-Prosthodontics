@@ -14,6 +14,7 @@ import BookingContact from './components/BookingContact';
 import LocalRelevance from './components/LocalRelevance';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import DentalReceptionistChat from './components/DentalReceptionistChat';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <FinalCTA />
       </main>
       <Footer />
+      <DentalReceptionistChat />
     </div>
   );
 }
