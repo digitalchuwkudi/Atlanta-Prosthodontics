@@ -35,7 +35,7 @@ interface LeadCaptured {
 const STORAGE_HISTORY_KEY = "atl_prostho_chat_history";
 const STORAGE_TIME_KEY = "atl_prostho_chat_time";
 const STORAGE_LEAD_KEY = "atl_prostho_lead_captured";
-const TTL_HOURS = 6;
+const TTL_HOURS = 1.5;
 
 export default function DentalReceptionistChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,7 @@ export default function DentalReceptionistChat() {
     }
   }, []);
 
-  // 6-Hour memory refresh (TTL) on load
+  // 1.5-Hour memory refresh (TTL) on load
   useEffect(() => {
     const lastSavedTime = localStorage.getItem(STORAGE_TIME_KEY);
     const savedHistory = localStorage.getItem(STORAGE_HISTORY_KEY);
@@ -124,7 +124,7 @@ export default function DentalReceptionistChat() {
       const initialGreeting: Message = {
         id: "init-welcome",
         role: "assistant",
-        content: `Welcome to Atlanta Prosthodontics. I am your specialized Receptionist. How can I support your dental restoration goals today?`,
+        content: `Welcome to Atlanta Prosthodontics. I am your specialized Receptionist.How can I support your dental restoration goals today?`,
         timestamp: new Date()
       };
       setMessages([initialGreeting]);
@@ -625,30 +625,6 @@ ${transcript}
 
               <div ref={messagesEndRef} />
             </div>
-
-            {/* Quick Suggestions Chips */}
-            {messages.length <= 3 && !leadCaptured && (
-              <div className="px-3 py-2 bg-gray-50 border-t border-gray-100 flex items-center gap-2 overflow-x-auto scrollbar-none shrink-0">
-                <button
-                  onClick={() => handleSendMessage("Tell me about Dr. Blackburn and their prosthodontic credentials")}
-                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
-                >
-                  🎓 Dr. Blackburn's Expertise
-                </button>
-                <button
-                  onClick={() => handleSendMessage("What custom restorative treatments do you offer?")}
-                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
-                >
-                  💎 Restorative Treatments
-                </button>
-                <button
-                  onClick={() => handleSendMessage("Do you accept insurance or offer payment plans?")}
-                  className="bg-white hover:bg-gold-50/50 hover:border-gold-500/30 text-[10.5px] text-navy-900 border border-gray-200/80 px-3 py-1.5 rounded-full text-left transition-all duration-300 shadow-sm shrink-0 flex items-center gap-1 font-medium whitespace-nowrap"
-                >
-                  💰 Insurance & Financing
-                </button>
-              </div>
-            )}
 
             {/* Microphone listening indicator */}
             {isListening && (
