@@ -11,14 +11,14 @@ export default function Hero() {
         <img 
           src={heroImg} 
           alt="Prosthodontist crafting a dental restoration" 
-          className="w-full h-full object-cover object-center image-render-sharp brightness-50 opacity-90"
+          className="w-full h-full object-cover object-[85%_48%] sm:object-[80%_48%] lg:object-center image-render-sharp brightness-50 lg:brightness-75 opacity-90"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40"></div>
+        <div className="absolute inset-0 bg-black/75 lg:bg-gradient-to-r lg:from-black/80 lg:via-black/65 lg:to-black/25"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mb-12"
+            className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start w-full sm:w-auto"
           >
             <a href="#booking" className="bg-gold-500 text-white hover:bg-white hover:text-gold-500 px-8 py-4 rounded text-center font-semibold text-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300 transform flex items-center justify-center min-h-[48px] shadow-lg hover:shadow-xl">
               Schedule a Consultation
@@ -56,12 +56,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-6 pt-6 border-t border-white/20"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-6 border-t border-white/20 w-full"
           >
-            <img src="https://i.ibb.co/BHftVdRf/ada-logo.png" alt="ADA Recognized" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
-            <img src="https://i.ibb.co/S7wtsJ7b/hinman-dental-meeting.jpg" alt="Hinman Dental Meeting" className="h-16 w-auto object-contain rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
-            <img src="https://i.ibb.co/fG9DC7pv/national-dental-association.png" alt="National Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
-            <img src="https://i.ibb.co/7sv5TRw/georgia-dental-association-logo.png" alt="Georgia Dental Association" className="h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/BHftVdRf/ada-logo.png" alt="ADA Recognized" className="h-14 sm:h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/S7wtsJ7b/hinman-dental-meeting.jpg" alt="Hinman Dental Meeting" className="h-14 sm:h-16 w-auto object-contain rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/fG9DC7pv/national-dental-association.png" alt="National Dental Association" className="h-14 sm:h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
+            <img src="https://i.ibb.co/7sv5TRw/georgia-dental-association-logo.png" alt="Georgia Dental Association" className="h-14 sm:h-16 w-auto object-contain bg-white/90 p-1.5 rounded transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(0,229,255,0.45)]" />
           </motion.div>
         </div>
       </div>

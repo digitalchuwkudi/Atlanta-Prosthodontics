@@ -124,7 +124,7 @@ export default function DentalReceptionistChat() {
       const initialGreeting: Message = {
         id: "init-welcome",
         role: "assistant",
-        content: `Welcome to Atlanta Prosthodontics. I am your specialized Receptionist.How can I support your dental restoration goals today?`,
+        content: `Welcome to Atlanta Prosthodontics. I am your specialized Elite Receptionist.\n\nHow can I support your dental restoration goals today? Are you continuing a previous inquiry or starting a new journey with us?`,
         timestamp: new Date()
       };
       setMessages([initialGreeting]);
