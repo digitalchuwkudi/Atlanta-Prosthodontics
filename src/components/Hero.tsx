@@ -1,21 +1,24 @@
 import { motion } from 'motion/react';
 import { ShieldCheck, Award } from 'lucide-react';
+// @ts-ignore
+import heroImg from '../assets/images/prosthodontist_hero_bg_1785124448754.jpg';
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-black">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-          alt="Premium Dental Clinic Interior" 
-          className="w-full h-full object-cover object-center"
+          src={heroImg} 
+          alt="Prosthodontist crafting a dental restoration" 
+          className="w-full h-full object-cover object-center image-render-sharp brightness-50 opacity-90"
+          referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

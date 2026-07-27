@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Image as ImageIcon, X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn, X, Play, Pause } from 'lucide-react';
 
 interface GalleryItem {
   id: number;
@@ -8,85 +8,84 @@ interface GalleryItem {
   category: 'Smile Transformations' | 'Our Office' | 'Advanced Clinical';
   image: string;
   description: string;
-  aspect?: string;
-  span?: string;
 }
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState<'All' | 'Smile Transformations' | 'Our Office' | 'Advanced Clinical'>('All');
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const galleryItems: GalleryItem[] = [
     {
       id: 7,
       title: "Full Arch Rehabilitation",
       category: "Smile Transformations",
-      image: "https://i.ibb.co/XxWtcGZ5/image.jpg",
-      description: "Complete dynamic arch rehabilitation restoring full occlusal balance, anatomical alignment, and a healthy patient bite.",
-      aspect: "aspect-[4/3]",
-      span: "col-span-1"
+      image: "https://i.ibb.co/s9LZjsbS/image.jpg",
+      description: "Complete dynamic arch rehabilitation restoring full occlusal balance, anatomical alignment, and a healthy patient bite."
     },
     {
       id: 10,
       title: "Artisanal Crown Design Studio",
       category: "Our Office",
-      image: "https://i.ibb.co/3m0tmRcL/image.jpg",
-      description: "Bespoke dental prosthetics engineered and custom-shaded by master dental craftspeople on-site in Buckhead.",
-      aspect: "aspect-[16/9]",
-      span: "col-span-1 md:col-span-2"
+      image: "https://i.ibb.co/SwS8vPXG/image.jpg",
+      description: "Bespoke dental prosthetics engineered and custom-shaded by master dental craftspeople on-site in Buckhead."
     },
     {
       id: 8,
       title: "Digital Guided Surgical Planning",
       category: "Advanced Clinical",
-      image: "https://i.ibb.co/bMXGJd2s/image.jpg",
-      description: "Three-dimensional computed guidance mapping and high-precision prosthetic surgical templates.",
-      aspect: "aspect-[3/4]",
-      span: "col-span-1 md:row-span-2"
+      image: "https://i.ibb.co/4CsP8Dc/image.jpg",
+      description: "Three-dimensional computed guidance mapping and high-precision prosthetic surgical templates."
     },
     {
       id: 9,
       title: "Welcoming Buckhead Lounge",
       category: "Our Office",
-      image: "https://i.ibb.co/Mkr02XMr/image.jpg",
-      description: "Our elegant, serene Buckhead-inspired reception area designed to make you feel comfortable and right at home.",
-      aspect: "aspect-[4/3]",
-      span: "col-span-1"
+      image: "https://i.ibb.co/HTvW8DH4/image.jpg",
+      description: "Our elegant, serene Buckhead-inspired reception area designed to make you feel comfortable and right at home."
     },
     {
       id: 11,
       title: "Virtual Smile Architecture",
       category: "Advanced Clinical",
-      image: "https://i.ibb.co/r2FKZW4V/image.jpg",
-      description: "Precision digital mapping of oral structures to design a balanced, natural smile with microscopic detail.",
-      aspect: "aspect-[4/3]",
-      span: "col-span-1"
+      image: "https://i.ibb.co/pBc0SJ03/image.jpg",
+      description: "Precision digital mapping of oral structures to design a balanced, natural smile with microscopic detail."
     }
   ];
 
+  // Filter items based on selected category
   const filteredItems = activeFilter === 'All' 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter);
+
+  // Keep index within bounds if filtered list changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeFilter]);
+
+  // Autoplay functionality
+  useEffect(() => {
+    if (!isPlaying) return;
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPlaying, currentIndex, filteredItems.length]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % filteredItems.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
+  };
 
   const categories: ('All' | 'Smile Transformations' | 'Our Office' | 'Advanced Clinical')[] = [
     'All', 'Smile Transformations', 'Our Office', 'Advanced Clinical'
   ];
 
-  const handleNext = () => {
-    if (selectedImage === null) return;
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedImage);
-    const nextIndex = (currentIndex + 1) % filteredItems.length;
-    setSelectedImage(filteredItems[nextIndex].id);
-  };
-
-  const handlePrev = () => {
-    if (selectedImage === null) return;
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedImage);
-    const prevIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
-    setSelectedImage(filteredItems[prevIndex].id);
-  };
-
-  const activeItem = galleryItems.find(item => item.id === selectedImage);
+  const currentItem = filteredItems[currentIndex] || filteredItems[0];
 
   return (
     <section id="gallery" className="py-24 bg-gray-50 border-t border-gray-100">
@@ -108,12 +107,14 @@ export default function Gallery() {
           </motion.div>
         </div>
 
-        {/* Filters */}
+        {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveFilter(category)}
+              onClick={() => {
+                setActiveFilter(category);
+              }}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeFilter === category
                   ? 'bg-gold-500 text-white shadow-md shadow-gold-500/20 scale-[1.02]'
@@ -125,67 +126,139 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-max"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                className={`group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-[0_0_30px_rgba(0,229,255,0.25)] hover:border-gold-500/20 transition-all duration-300 cursor-pointer flex flex-col ${item.span || 'col-span-1'}`}
-                onClick={() => setSelectedImage(item.id)}
-              >
-                <div className={`w-full overflow-hidden bg-gray-100 relative ${item.aspect || 'aspect-[4/3]'}`}>
+        {/* Premium Slideshow Frame */}
+        {filteredItems.length > 0 && currentItem && (
+          <div className="max-w-5xl mx-auto">
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-500">
+              
+              {/* Slide Content Layout (Split Image & Details for outstanding presentation) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                
+                {/* Visual Area */}
+                <div className="lg:col-span-8 relative h-[320px] sm:h-[450px] md:h-[520px] bg-gray-950 overflow-hidden group">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentItem.id}
+                      src={currentItem.image}
+                      alt={currentItem.title}
+                      initial={{ opacity: 0, scale: 1.02 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.5 }}
+                      className="w-full h-full object-contain image-render-sharp"
+                      referrerPolicy="no-referrer"
+                    />
+                  </AnimatePresence>
+
+                  {/* Zoom Indicator/Button */}
+                  <button
+                    onClick={() => setIsLightboxOpen(true)}
+                    className="absolute bottom-4 right-4 bg-navy-900/80 backdrop-blur-md hover:bg-gold-500 text-white p-3 rounded-full border border-white/10 transition-all duration-300 shadow-lg z-10 flex items-center justify-center"
+                    title="Zoom Image"
+                  >
+                    <ZoomIn className="w-5 h-5" />
+                  </button>
+
+                  {/* Auto-play indicator badge */}
+                  <button
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="absolute top-4 left-4 bg-navy-900/80 backdrop-blur-md hover:bg-navy-900 text-white px-3 py-1.5 rounded-full border border-white/10 transition-all duration-300 shadow-md z-10 flex items-center gap-2 text-xs font-semibold"
+                  >
+                    {isPlaying ? <Pause className="w-3.5 h-3.5 text-gold-500" /> : <Play className="w-3.5 h-3.5 text-white" />}
+                    {isPlaying ? 'Autoplay Active' : 'Autoplay'}
+                  </button>
+                </div>
+
+                {/* Details Panel */}
+                <div className="lg:col-span-4 p-8 sm:p-10 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-gray-100 text-left">
+                  <div>
+                    <span className="inline-block bg-champagne text-navy-900 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 border border-gold-500/15">
+                      {currentItem.category}
+                    </span>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentItem.id}
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <h4 className="text-2xl sm:text-3xl font-serif font-bold text-navy-900 mb-4 leading-tight">
+                          {currentItem.title}
+                        </h4>
+                        <p className="text-charcoal leading-relaxed text-sm sm:text-base font-light">
+                          {currentItem.description}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Manual Arrow Controls and Slide Count */}
+                  <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-medium text-gray-400">
+                      Slide {currentIndex + 1} of {filteredItems.length}
+                    </span>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={handlePrev}
+                        className="w-11 h-11 rounded-full bg-gray-50 hover:bg-gold-500 hover:text-white border border-gray-200 hover:border-gold-500 flex items-center justify-center text-navy-900 transition-all duration-300"
+                        title="Previous Image"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="w-11 h-11 rounded-full bg-gray-50 hover:bg-gold-500 hover:text-white border border-gray-200 hover:border-gold-500 flex items-center justify-center text-navy-900 transition-all duration-300"
+                        title="Next Image"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Thumbnail Nav Bar (Click to instantly skip and preview) */}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {filteredItems.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`relative w-16 h-12 sm:w-20 sm:h-14 rounded-xl overflow-hidden border-2 transition-all duration-300 bg-gray-100 flex-shrink-0 ${
+                    currentIndex === idx 
+                      ? 'border-gold-500 scale-105 shadow-md shadow-gold-500/10' 
+                      : 'border-transparent opacity-60 hover:opacity-100 hover:scale-102'
+                  }`}
+                >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover image-render-sharp"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <ZoomIn className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <span className="absolute top-4 left-4 bg-navy-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/10">
-                    {item.category}
-                  </span>
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <div>
-                    <h4 className="text-lg font-serif font-bold text-navy-900 mb-2 group-hover:text-gold-500 transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-charcoal leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+                </button>
+              ))}
+            </div>
 
-        {/* Lightbox Modal */}
+          </div>
+        )}
+
+        {/* Lightbox / Zoom Dialog */}
         <AnimatePresence>
-          {selectedImage !== null && activeItem && (
+          {isLightboxOpen && currentItem && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 p-4 md:p-8 backdrop-blur-md"
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setIsLightboxOpen(false)}
             >
               <button 
-                onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
+                onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); }}
                 className="absolute top-6 right-6 text-white/75 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 z-10"
                 title="Close"
               >
@@ -216,23 +289,23 @@ export default function Gallery() {
                 className="max-w-4xl w-full flex flex-col bg-navy-900/40 rounded-2xl overflow-hidden border border-white/10"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="aspect-[16/10] w-full bg-black relative">
+                <div className="aspect-[16/10] w-full bg-black relative flex items-center justify-center">
                   <img
-                    src={activeItem.image}
-                    alt={activeItem.title}
-                    className="w-full h-full object-contain"
+                    src={currentItem.image}
+                    alt={currentItem.title}
+                    className="max-w-full max-h-[70vh] object-contain image-render-sharp"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <div className="p-6 md:p-8 bg-navy-900 text-left border-t border-white/10">
                   <span className="text-xs font-bold tracking-wider text-gold-500 uppercase block mb-1">
-                    {activeItem.category}
+                    {currentItem.category}
                   </span>
                   <h4 className="text-xl md:text-2xl font-serif font-bold text-white mb-2">
-                    {activeItem.title}
+                    {currentItem.title}
                   </h4>
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                    {activeItem.description}
+                    {currentItem.description}
                   </p>
                 </div>
               </motion.div>

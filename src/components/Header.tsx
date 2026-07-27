@@ -65,11 +65,8 @@ export default function Header() {
         </div>
 
         {/* Mobile menu button */}
-        <div className="lg:hidden flex items-center space-x-4">
-          <a href="tel:4046597696" className="p-2 text-navy-900 bg-champagne-light rounded-full">
-            <Phone className="w-5 h-5" />
-          </a>
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-navy-900 p-2">
+        <div className="lg:hidden flex items-center">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-navy-900 p-2" aria-label="Toggle menu">
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -84,9 +81,9 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-4 flex flex-col">
+            <div className="px-4 py-6 space-y-4 flex flex-col items-center text-center">
               {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col">
+                <div key={link.name} className="flex flex-col items-center text-center">
                   <a href={link.href} className="text-base font-medium text-navy-900 hover:text-gold-500" onClick={() => setIsMobileMenuOpen(false)}>
                     {link.name}
                   </a>

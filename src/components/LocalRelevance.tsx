@@ -12,9 +12,10 @@ export default function LocalRelevance() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            <div className="flex items-center mb-4 text-gold-500">
-              <MapPin className="w-6 h-6 mr-2" />
+            <div className="flex flex-col lg:flex-row items-center mb-4 text-gold-500">
+              <MapPin className="w-6 h-6 mb-2 lg:mb-0 lg:mr-2 flex-shrink-0" />
               <h3 className="text-xl font-bold uppercase tracking-wider">Convenient Intown Buckhead Location</h3>
             </div>
             <p className="text-gray-300 text-lg mb-4">
