@@ -18,39 +18,46 @@ export default function Gallery() {
 
   const galleryItems: GalleryItem[] = [
     {
-      id: 11,
-      title: "Full Arch Rehabilitation",
+      id: 1,
+      title: "Esthetic Anterior Smile Transformation",
       category: "Smile Transformations",
-      image: "https://i.ibb.co/pBc0SJ03/image.jpg",
-      description: "Meticulous clinical procedure restoring a patient's natural bite balance, anatomical alignment, and full aesthetic harmony."
+      image: "https://i.ibb.co/XkYPwtnj/517903332-18326775496202655-1502857427757625219-n.jpg",
+      description: "Through bespoke porcelain restorations, this treatment seamlessly corrected localized wear and deep discoloration to achieve optimal smile harmony. The final result delivers exceptional translucency and vitality, beautifully revitalizing the patient's natural esthetics."
     },
     {
-      id: 9,
-      title: "Welcoming Buckhead Lounge",
+      id: 2,
+      title: "Modern Patient Treatment Suite",
       category: "Our Office",
-      image: "https://i.ibb.co/SwS8vPXG/image.jpg",
-      description: "Our elegant, calming reception area designed to make you feel relaxed, comfortable, and right at home."
+      image: "https://i.ibb.co/TBznhf6S/515870851-24494395553485381-5883376028251175430-n.jpg",
+      description: "Designed with patient comfort in mind, our treatment operatories feature advanced technology for precise, seamless care. Experience exceptional prosthodontic excellence in a refined and relaxing clinical environment."
     },
     {
-      id: 7,
-      title: "Drs. Blackburn II & III",
-      category: "Our Office",
-      image: "https://i.ibb.co/s9LZjsbS/image.jpg",
-      description: "Our leading prosthodontic specialists inside their Buckhead consultation office, representing over 50 years of combined specialized expertise."
-    },
-    {
-      id: 8,
-      title: "Buckhead Clinical Entrance",
-      category: "Our Office",
-      image: "https://i.ibb.co/4CsP8Dc/image.jpg",
-      description: "Our modern clinical practice situated in the heart of Buckhead, Atlanta, featuring state-of-the-art diagnostic facilities."
-    },
-    {
-      id: 10,
-      title: "Our Clinical Team",
+      id: 3,
+      title: "Precision Clinical Dental Care",
       category: "Advanced Clinical",
-      image: "https://i.ibb.co/HTvW8DH4/image.jpg",
-      description: "Our highly specialized dental assistants, hygienists, and coordinators who work closely with the doctors to deliver a premium patient experience."
+      image: "https://i.ibb.co/RpCDRw2K/514463250-24455184987406438-4035164057283111178-n.jpg",
+      description: "Our dedicated clinical team applies meticulous diagnostic techniques to deliver personalized, high-precision care tailored to your unique dental needs. Experience seamless prosthodontic treatment crafted around ultimate patient comfort and exemplary aesthetic outcomes."
+    },
+    {
+      id: 4,
+      title: "Meet Our Dedicated Dental Team",
+      category: "Our Office",
+      image: "https://i.ibb.co/bMHmrZ7B/503503346-18324033787202655-2633504834733458637-n.jpg",
+      description: "Our distinguished team combines decades of specialized clinical expertise with a commitment to compassionate, personalized patient care. Step into a welcoming environment designed to deliver an exceptional standard of comfort and dental excellence."
+    },
+    {
+      id: 5,
+      title: "Precision Diagnostic Intraoral Assessment",
+      category: "Advanced Clinical",
+      image: "https://i.ibb.co/4RzSRR4Q/448160036-18279139021202655-9143640367617568221-n.jpg",
+      description: "Detailed intraoral evaluations allow our clinical team to meticulously analyze existing restorations and structural integrity with absolute precision. Utilizing advanced diagnostic techniques, we craft bespoke restorative strategies designed to ensure optimal long-term oral health and function."
+    },
+    {
+      id: 6,
+      title: "Legacy of Dental Excellence",
+      category: "Our Office",
+      image: "https://i.ibb.co/gLFLLtqm/503565106-18324033778202655-1779589526221013524-n.jpg",
+      description: "Our distinguished specialists bring decades of recognized clinical mastery and academic distinction to every patient interaction. Grounded in a rich heritage of expertise, we remain committed to delivering unparalleled, personalized prosthodontic care."
     }
   ];
 

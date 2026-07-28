@@ -41,7 +41,7 @@ export default function MeetDoctors() {
           >
             <div className="w-full h-[420px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm relative">
               <img 
-                src="https://i.ibb.co/JFsQ1ksY/dr-blackburn-ii.jpg" 
+                src="https://i.ibb.co/1fbBrMTW/515076850-24494395936818676-7968327426567086767-n.jpg" 
                 alt="Dr. B.A. Blackburn II" 
                 className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
                 referrerPolicy="no-referrer"
@@ -74,7 +74,7 @@ export default function MeetDoctors() {
           >
             <div className="w-full h-[420px] rounded-xl overflow-hidden mb-6 bg-gray-100 border border-gray-100 shadow-sm relative">
               <img 
-                src="https://i.ibb.co/gbh4zNTg/dr-blackburn-iii.jpg" 
+                src="https://i.ibb.co/V0S33Xqb/515012626-24494395656818704-8895609422215380156-n.jpg" 
                 alt="Dr. B.A. Blackburn III" 
                 className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] image-render-sharp"
                 referrerPolicy="no-referrer"
